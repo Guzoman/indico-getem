@@ -3,20 +3,20 @@ import os
 SQLALCHEMY_DATABASE_URI = f'postgresql://{os.environ["PGUSER"]}:{os.environ["PGPASSWORD"]}@{os.environ["PGHOST"]}:5432/{os.environ["PGDATABASE"]}'
 del os
 
-# Change this to something long and random
+# Configuración para VII Forum GETEM
 SECRET_KEY = 'indico-secret-key-1758114089'
 BASE_URL = 'http://51.178.44.92:9090'
 USE_PROXY = False
 
 DEFAULT_TIMEZONE = 'Europe/Madrid'
-DEFAULT_LOCALE = 'es_ES'
+DEFAULT_LOCALE   = 'es_ES'
 
 REDIS_CACHE_URL = 'redis://indico-redis:6379/0'
 CELERY_BROKER   = 'redis://indico-redis:6379/1'
 
-# Change these emails to something sensible
-NO_REPLY_EMAIL = 'noreply@example.invalid'
-SUPPORT_EMAIL = 'suppport@example.invalid'
+# Correos para VII Forum GETEM
+NO_REPLY_EMAIL = 'noreply@getem.org'
+SUPPORT_EMAIL = 'forum@getem.org'
 
 ENABLE_ROOMBOOKING = True
 
@@ -28,5 +28,12 @@ CUSTOMIZATION_DIR = '/opt/indico/custom'
 STORAGE_BACKENDS   = {'default': 'fs:/opt/indico/archive'}
 ATTACHMENT_STORAGE = 'default'
 
-# Specify the plugins you need here
+# Plugins para eventos
 PLUGINS = {'previewer_code', 'vc_zoom', 'payment_manual'}
+
+# Configuración de correo SMTP
+SMTP_HOST = 'localhost'
+SMTP_PORT = 25
+SMTP_USE_TLS = False
+SMTP_USER = None
+SMTP_PASSWORD = None
